@@ -19,7 +19,7 @@ $(document).ready(function () {
   endElem.click(function () {
     if (!$('.datepicker').hasClass('active')) {
       $('.datepicker').addClass('active');
-      $('.datepicker').css({'left': '403px', 'top': '341.1px'});
+      $('.datepicker').css({'left': '8%', 'top': '341.1px'});
     }
   });
 

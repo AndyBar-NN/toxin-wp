@@ -37,7 +37,7 @@
     </div>
     <!-- /.container -->
     <div class="copyright">
-        <div class="container copyright__block">
+        <div class="container_main copyright__block">
             <div>
                 <span class="copyright__text">Copyright © 2018 Toxin отель. Все права зачищены.</span>
             </div>

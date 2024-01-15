@@ -343,6 +343,7 @@ template {
     width: 95%;
     max-width: 1160px;
     margin: auto;
+    position: relative;
 }
 
 *, *:before, *:after {
@@ -688,8 +689,8 @@ button {
 .table {
     position: absolute;
     z-index: 10;
-    top: 140px;
-    left: auto;
+    top: -57rem;
+    left: 0;
 }
 
 .table__title {
@@ -1031,11 +1032,6 @@ button {
 
 .main__sidebar {
     margin-bottom: 165px;
-}
-
-.container__sidebar {
-    display: flex;
-    /*justify-content: space-between;*/
 }
 
 .sidebar {
