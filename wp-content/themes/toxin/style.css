@@ -69,10 +69,21 @@ pre {
  * Remove the gray background on active links in IE 10.
  */
 a {
+    color: rgba(31, 32, 65, 0.5);
     background-color: transparent;
 }
 a:hover {
     color: #BC9CFF;
+}
+
+li {
+    list-style-type: none;
+    /* Убираем маркеры */
+}
+
+ul {
+    margin-left: 0;
+    padding-left: 0;
 }
 /**
  * 1. Remove the bottom border in Chrome 57-
@@ -545,17 +556,22 @@ button {
 
 .menu {
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     padding: 15px 0 12px 0;
 }
 
-.menu__logo {
-    margin-right: 284px;
+.menu_block,
+.menu .nav {
+    display: flex;
+    align-items: center;
 }
 
-.menu__nav {
-    color: rgba(31, 32, 65, 0.5);
+.menu .nav li {
+    margin-right: 18px;
+}
+
+.menu .nav li a {
     margin-right: 18px;
 }
 
@@ -918,6 +934,9 @@ button {
     color: #FFF;
 }
 
+.search__button:hover {
+    color: #fff;
+}
 .search__button {
     display: block;
 }
@@ -1546,12 +1565,14 @@ button {
 
 .footer__col {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
     margin-top: 97px;
     margin-bottom: 100px;
 }
 
 .footer__col--link {
+    margin-top: 15px;
     color: rgba(31, 32, 65, 0.5);
 }
 
@@ -1564,18 +1585,16 @@ button {
     text-transform: uppercase;
 }
 
-.col1, .col2, .col3, .col4, .col5 {
+.col {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
-.col1 {
-    width: 260px;
-    height: 132px;
+.col {
+    width: calc(110% / 5);
 }
 
-.col1__text {
+.footer .col1__text {
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -1584,31 +1603,14 @@ button {
     color: rgba(31, 32, 65, 0.5);
 }
 
-.col2, .col3 {
-    padding-top: 5px;
-    height: 172px;
+.col1 {
+    max-width: 270px;
 }
 
-.col2 {
-    margin-left: 40px;
-}
-
-.col3 {
-    margin-right: 1px;
-    margin-left: 57px;
-}
-
+.col2,
+.col3,
 .col4 {
-    padding-top: 5px;
-    margin-left: 92px;
-    height: 134px;
-}
-
-.col5 {
-    width: 260px;
-    height: 84px;
-    margin-left: 51px;
-    padding-top: 5px;
+    max-width: 180px;
 }
 
 .col5__text {
@@ -1661,4 +1663,10 @@ button {
 
 .social__link:not(:last-child) {
     margin-right: 18px;
+}
+
+@media screen and (max-width: 1024px) {
+    .menu_block {
+        display: none;
+    }
 }

@@ -1,6 +1,11 @@
 <?
 add_action( 'wp_enqueue_scripts', 'style_theme' );
 add_action( 'wp_enqueue_scripts', 'script_theme' );
+add_action( 'after_setup_theme', 'nav_menu' );
+
+function nav_menu() {
+    register_nav_menu( 'top', 'Меню в шапке' );
+}
 
 function style_theme() {
     wp_enqueue_style( 'styles', get_stylesheet_uri() );

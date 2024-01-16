@@ -13,13 +13,16 @@
 <header class="header">
     <div class="container_main">
         <div class="menu">
-            <a href="" id="logo" class="menu__logo"><img src="<?= get_stylesheet_directory_uri(); ?>/assets/img/icons/logo.svg" alt=""></a>
-            <div class="nav">
-                <a href="#" class="menu__nav">О нас</a>
-                <a href="#" class="menu__nav">Услуги<img src="<?= get_stylesheet_directory_uri(); ?>/assets/img/icons/arrow_down.svg" class="menu__arrow" alt=""></a>
-                <a href="#" class="menu__nav">Вакансии</a>
-                <a href="#" class="menu__nav">Новости</a>
-                <a href="#" class="menu__nav">Соглашения<img src="<?= get_stylesheet_directory_uri(); ?>/assets/img/icons/arrow_down.svg" class="menu__arrow" alt=""></a>
+            <a href="<? bloginfo('url'); ?>" id="logo" class="menu__logo"><img src="<?= get_stylesheet_directory_uri(); ?>/assets/img/icons/logo.svg" alt=""></a>
+
+            <div class="menu_block">
+                <? wp_nav_menu(array(
+                    'theme_location' => 'top',
+                    'container' => null,
+                    'menu_class' => 'nav',
+                    'menu_id' => 'nav',
+                )); ?>
+
                 <div class="buttons">
                     <a href="" class="button button__login">Войти</a>
                     <a href="" class="button button__reg">Зарегестрироваться</a>

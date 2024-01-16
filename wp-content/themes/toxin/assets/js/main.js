@@ -8,6 +8,13 @@ $(document).ready(function () {
   var startElem = $('#start'),
       endElem = $('#end');
 
+  function getAbsPosition(element) {
+    var rect = element.getBoundingClientRect();
+    return {x:rect.left,y:rect.top}
+  }
+
+  var coords = getAbsPosition(document.querySelector('.table__form'));
+
   startElem.datepicker({
     minDate: date,
     maxDate: endDate,
@@ -19,7 +26,7 @@ $(document).ready(function () {
   endElem.click(function () {
     if (!$('.datepicker').hasClass('active')) {
       $('.datepicker').addClass('active');
-      $('.datepicker').css({'left': '8%', 'top': '341.1px'});
+      $('.datepicker').css({'left': `${coords.x + 31}px`, 'top': `${coords.y + 201}px`});
     }
   });
 
@@ -28,19 +35,10 @@ $(document).ready(function () {
     var $data = {};
     // переберём все элементы input, textarea и select формы с id="myForm "
     $('.table__form').find('input').each(function () {
-      // добавим новое свойство к объекту $data
-      // имя свойства – значение атрибута name элемента
       // значение свойства – значение свойство value элемента
       $data[this.name] = $(this).val().trim();
     });
   });
-  /*$(document).click(function (e) {
-      if (!$(".datepickers").is(e.target) ||
-          ($('.datepicker').is(e.target) &&
-          $('.datepicker').has(e.target).length == 0)) {
-          $('.datepicker').removeClass('active');
-      }
-  });*/
 
   // swiper-slide
   const swiper = new Swiper('.swiper-container', {
