@@ -2,6 +2,7 @@
 add_action( 'wp_enqueue_scripts', 'style_theme' );
 add_action( 'wp_enqueue_scripts', 'script_theme' );
 add_action( 'after_setup_theme', 'nav_menu' );
+add_theme_support( 'post-thumbnails' );
 
 function nav_menu() {
     register_nav_menu( 'top', 'Меню в шапке' );
@@ -23,6 +24,8 @@ function script_theme() {
     wp_enqueue_script( 'jquery' );
 
     wp_enqueue_script( 'datepicker', get_template_directory_uri() . '/assets/js/plagins/datepicker.js', [ 'jquery' ], null, false);
+    wp_enqueue_script( 'nouislider', get_template_directory_uri() . '/assets/js/plagins/nouislider.js', [ 'jquery' ], null, false);
+    wp_enqueue_script( 'wNumb', get_template_directory_uri() . '/assets/js/plagins/wNumb.min.js', [ 'jquery' ], null, false);
     wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js', [ 'jquery' ], null, false );
     wp_enqueue_script( 'swiper', 'https://unpkg.com/swiper/swiper-bundle.min.js', [ 'jquery' ], null, false );
     wp_enqueue_script( 'mask', get_template_directory_uri() . '/assets/js/plagins/jquery.mask.min.js', [ 'jquery' ], null, true );

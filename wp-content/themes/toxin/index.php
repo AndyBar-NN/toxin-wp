@@ -15,9 +15,9 @@
         </div>
     </div>
     <!-- /. swiper-container -->
-    <div class="container_main">
+    <div class="container__main">
         <div class="table">
-            <form action="#" class="table__form">
+            <form action="#" id="table__form--date" class="table__form">
                 <h2 class="table__title">Найдём номера под ваши пожелания</h2>
                 <div class="table__data">
                     <div class="table__arrival">

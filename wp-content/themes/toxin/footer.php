@@ -1,5 +1,5 @@
 <footer class="footer">
-    <div class="container_main">
+    <div class="container__main">
         <div class="footer__col">
             <div class="col col1">
                 <a href=""><img src="<?= get_stylesheet_directory_uri(); ?>/assets/img/icons/logo.svg" alt=""></a>
@@ -37,7 +37,7 @@
     </div>
     <!-- /.container -->
     <div class="copyright">
-        <div class="container_main copyright__block">
+        <div class="container__main copyright__block">
             <div>
                 <span class="copyright__text">Copyright © 2018-<?= date("Y"); ?> Toxin отель. Все права зачищены.</span>
             </div>

@@ -1,13 +1,15 @@
 <? get_header() ?>
 
 <div class="main__sidebar">
-    <div class="container_main container__sidebar">
+    <div class="container__main container__sidebar">
         <div class="sidebar">
             <div class="sidebar__data">
                 <div class="sidebar__arrival">
-                    <label for="arrival" class="table__label">Даты пребывания в отеле</label>
-                    <input id="start" class="datepickers arrival sidebar__arrival--dates" placeholder="ДД.ММ.ГГГГ" readonly>
-                    <img src="<?= get_stylesheet_directory_uri(); ?>/assets/img/icons/arrow_down.svg" class="table__departure--arrow" alt="">
+                    <form action="#" id="table__form--date">
+                        <label for="arrival" class="table__label">Даты пребывания в отеле</label>
+                        <input id="startRoom" class="datepickers arrival sidebar__arrival--dates" placeholder="ДД.ММ.ГГГГ" readonly>
+                        <img src="<?= get_stylesheet_directory_uri(); ?>/assets/img/icons/arrow_down.svg" class="table__departure--arrow" alt="">
+                    </form>
                 </div>
             </div>
             <!-- /.sidebar__data -->
@@ -161,7 +163,51 @@
         <div class="rooms">
             <h2 class="rooms__title">Номера, которые мы для вас подобрали</h2>
             <div class="rooms__elem">
+                <?
+                // параметры по умолчанию
+                $posts = get_posts( array(
+                    'numberposts' => -1,
+                    'category_name'   => 'rooms',
+                    'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                ) );
 
+                global $post;
+                foreach( $posts as $post ) : setup_postdata( $post );?>
+
+                    <a href="<? the_permalink(); ?>" class="room">
+                        <div class="room__img">
+                            <? the_post_thumbnail('adv_thumbnail'); ?>
+                            <div class="room__left"></div>
+                            <div class="room__right"></div>
+                        </div>
+                        <div class="room__data">
+                            <div class="room__data--number">
+                                <span class="room__number--elem">№</span>
+                                <span class="room__number"><? the_title(); ?></span>
+                                <span class="room__luks">${luks}</span>
+                            </div>
+                            <div class="room__data--cash">
+                                <span class="room__cash"><?= CFS()-> get('price'); ?> ₽</span>
+                                <span class="room__day">в сутки</span>
+                            </div>
+                        </div>
+                        <hr class="room__data--content">
+                        </hr>
+                        <div class="room__rating">
+                            <div class="room__rating--star">
+                                <img src="${star}" alt="" class="star">
+                            </div>
+                            <div class="room__rating--comment">
+                                <div class="room__comment">${feedback}</div>
+                                <div class="room__comment--elem">Отзывов</div>
+                            </div>
+                        </div>
+                    </a>
+
+                <? endforeach;
+
+                wp_reset_postdata(); // сброс
+                ?>
             </div>
             <!-- /.rooms__elem -->
         </div>

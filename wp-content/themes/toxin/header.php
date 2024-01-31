@@ -11,7 +11,7 @@
 <body>
 
 <header class="header">
-    <div class="container_main">
+    <div class="container__main">
         <div class="menu">
             <a href="<? bloginfo('url'); ?>" id="logo" class="menu__logo"><img src="<?= get_stylesheet_directory_uri(); ?>/assets/img/icons/logo.svg" alt=""></a>
 

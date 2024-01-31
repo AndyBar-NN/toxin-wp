@@ -350,11 +350,15 @@ template {
     display: none;
 }
 
-.container_main {
+.container__main {
     width: 95%;
     max-width: 1160px;
     margin: auto;
     position: relative;
+}
+
+.container__sidebar {
+    display: flex;
 }
 
 *, *:before, *:after {
@@ -1163,7 +1167,7 @@ button {
 }
 
 .rooms {
-    width: 100%;
+    /*width: 100%;*/
     margin-left: 60px;
     margin-top: 10px;
 }
